@@ -19,7 +19,7 @@ module AresMUSH
         else
           return GoalsCmd
         end
-      end
+      else
       when "marque"
         case cmd.switch
         when "set"
