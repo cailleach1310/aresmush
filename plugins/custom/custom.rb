@@ -27,7 +27,8 @@ module AresMUSH
           return MarqueCmd
         end
       else
-      return nil
+        return nil
+      end
     end
   
   end
