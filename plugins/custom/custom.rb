@@ -11,6 +11,23 @@ module AresMUSH
     end
  
     def self.get_cmd_handler(client, cmd, enactor)      
+      case cmd.root
+      when "goals"
+        case cmd.switch
+        when "set"
+          return SetGoalsCmd
+        else
+          return GoalsCmd
+        end
+      end
+      when "marque"
+        case cmd.switch
+        when "set"
+          return SetMarqueCmd
+        else
+          return MarqueCmd
+        end
+      end
       return nil
     end
   end
