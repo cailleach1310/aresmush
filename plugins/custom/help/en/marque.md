@@ -8,7 +8,7 @@ This command lets you set your character's marque in chargen. The state of the m
 `marque` - Shows the current state of the marque.
 `marque/set <percent>` - Sets your marque to the starting percentage (a value between 0-100).
 
-++ Staff Commands
+## Staff Commands
 
 `marque/init <name>` - Sets the marque to a starting value of '0' (which happens usually after the debut).
 `marque/raise <name>=<percent>` - Adds progress to the marque (as in the monthly off camera marque raise).
