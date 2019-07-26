@@ -19,7 +19,6 @@ module AresMUSH
         else
           return GoalsCmd
         end
-      else
       when "marque"
         case cmd.switch
         when "set"
@@ -27,7 +26,7 @@ module AresMUSH
         else
           return MarqueCmd
         end
-      end
+      else
       return nil
     end
   
