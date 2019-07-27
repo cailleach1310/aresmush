@@ -10,19 +10,21 @@ module AresMUSH
       end
 
       def handle
-        if enactor.ranks_rank = Adept
-          if (self.marque >= 0) && (self.marque <=100)
-            enactor.update(marque: self.marque)
-            client.emit_success "The marque has been set!"
-          else
-            client.emit_failure "The value must be in the range 0-100!"
-            return nil
-          end
-        else
+        if enactor.ranks_rank != Adept
           client.emit_failure "Only adept characters can set their marque!"
           return nil
-        end  
-      end
+        elsif enactor.chargen_locked = 1
+          client.emit_failure "You can't set your marque outside chargen! Please contact staff."
+          return nil
+        elsif (self.marque < 0) || (self.marque > 100)
+          client.emit_failure "The value must be in the range 0-100!"
+          return nil
+        else 
+          enactor.update(marque: self.marque)
+          client.emit_success "The marque has been set!"
+          return true
+        end
+      end  
     end
   end
 end
