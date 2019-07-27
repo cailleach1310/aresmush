@@ -85,6 +85,8 @@ module AresMUSH
         {
           id: char.id,
           name: char.name,
+          goals: Website.format_markdown_for_html(char.goals),
+          marque: char.marque,
           name_and_nickname: Demographics.name_and_nickname(char),
           all_fields: all_fields,
           fullname: char.fullname,
