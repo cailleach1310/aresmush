@@ -13,7 +13,7 @@ module AresMUSH
         if enactor.ranks_rank != Adept
           client.emit_failure "Only adept characters can set their marque!"
           return nil
-        elsif enactor.chargen_locked = 1
+        elsif enactor.chargen_locked = "true"
           client.emit_failure "You can't set your marque outside chargen! Please contact staff."
           return nil
         elsif (self.marque < 0) || (self.marque > 100)
