@@ -14,6 +14,7 @@ module AresMUSH
           enactor.update(marque: self.marque)
           client.emit_success "The marque has been set!"
         else
+          client.emit_failure "The value must be in the range 0-100!"
           return nil
         end  
       end
