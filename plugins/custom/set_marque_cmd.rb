@@ -10,7 +10,7 @@ module AresMUSH
       end
 
       def handle
-        if enactor.rank = Adept
+        if enactor.ranks_rank = Adept
           if (self.marque >= 0) && (self.marque <=100)
             enactor.update(marque: self.marque)
             client.emit_success "The marque has been set!"
