@@ -20,6 +20,7 @@ module AresMUSH
           end
         else
           client.emit_failure "Only adept characters can set their marque!"
+          return nil
         end  
       end
     end
