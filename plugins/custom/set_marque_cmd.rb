@@ -10,7 +10,7 @@ module AresMUSH
       end
 
       def handle
-        if enactor.ranks_rank != Adept
+        if enactor.ranks_rank != "Adept"
           client.emit_failure "Only adept characters can set their marque!"
           return nil
         elsif Chargen.check_chargen_locked(enactor)
