@@ -6,12 +6,12 @@ module AresMUSH
       attr_accessor :marque
 
       def parse_args
-       self.marque = trim_arg(cmd.args)
+       self.marque = integer_arg(cmd.args)
       end
 
       def handle
         enactor.update(marque: self.marque)
-        client.emit_success "The marque has been set to self.marque!"
+        client.emit_success "The marque has been set!"
       end
     end
   end
