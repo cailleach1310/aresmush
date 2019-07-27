@@ -14,7 +14,7 @@ module AresMUSH
           client.emit_failure "Only adept characters can set their marque!"
           return nil
         elsif Chargen.check_chargen_locked(enactor)
-          client.emit_failure "You can't set your marque outside chargen! Please contact staff."
+          client.emit_failure "You can't set your marque outside of chargen! Please contact staff."
           return nil
         elsif (self.marque < 0) || (self.marque > 100)
           client.emit_failure "The value must be in the range 0-100!"
