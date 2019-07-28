@@ -58,6 +58,7 @@ module AresMUSH
           demographics: demographics,
           background: Website.format_input_for_html(char.background),
           rp_hooks: Website.format_input_for_html(char.rp_hooks),
+          goals: Website.format_input_for_html(char.goals),
           desc: Website.format_input_for_html(char.description),
           shortdesc: char.shortdesc ? char.shortdesc : '',
           relationships: relationships,
