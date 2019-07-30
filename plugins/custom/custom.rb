@@ -23,6 +23,12 @@ module AresMUSH
         case cmd.switch
         when "set"
           return SetMarqueCmd
+        when "init"
+          return InitMarqueCmd
+        when "raise"
+          return RaiseMarqueCmd
+        when "acknowledge"
+          return AcknMarqueCmd
         else
           return MarqueCmd
         end
