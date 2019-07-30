@@ -10,6 +10,7 @@ This command lets you set your character's marque in chargen. The state of the m
 
 ## Staff Commands
 
-`marque/init <name>` - Sets the marque to a starting value of '0' (which happens usually after the debut).
+`marque/init <name>` - Sets the marque to a starting value of '0' (which happens usually after the debut), and also changes the rank from novice to adept.
 `marque/raise <name>=<percent>` - Adds progress to the marque (as in the monthly off camera marque raise).
 `marque/list` - Lists all characters with marques in progress.
+`marque/acknowledge` - Removes the marque attribute and sets the rank from adept to courtesan (the usual things that happen after a marque is acknowledged).
