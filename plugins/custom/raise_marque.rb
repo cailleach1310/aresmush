@@ -3,7 +3,7 @@ module AresMUSH
     class RaiseMarqueCmd
       include CommandHandler
       
-      attr_accessor :name, :num
+      attr_accessor :name, :num, :marque
 
       def parse_args
         args = cmd.parse_args( /(?<name>[^\=]+)\=(?<num>.+)/)
