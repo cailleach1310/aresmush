@@ -13,6 +13,9 @@ module AresMUSH
           elsif model.ranks_rank != "Adept"
             client.emit_failure "Only adept characters can have their marque acknowledged!"
             return nil
+          elsif model.marque < 100
+            client.emit_failure "The marque is not yet complete!"
+            return nil
           else 
             model.update(marque: nil)
             model.update(ranks_rank: "Courtesan")
