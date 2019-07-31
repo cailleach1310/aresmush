@@ -7,13 +7,12 @@ module AresMUSH
 
       
       def parse_args
-        args = cmd.parse_args( /(?<name>[^\=]+)\/(?<num>.+)/)
+        args = cmd.parse_args( /(?<name>+/)
         self.name = titlecase_arg(args.name)
-        self.num = trim_arg(args.num)
       end
       
       def required_args
-        [ self.name, self.num ]
+        [ self.name ]
       end
       
       def handle
