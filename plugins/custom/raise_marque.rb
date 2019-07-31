@@ -6,7 +6,7 @@ module AresMUSH
       attr_accessor :name, :num
 
       def parse_args
-        args = cmd.parse_args( /(?<name>[^\=]+)\/(?<num>.+)/)
+        args = cmd.parse_args( /(?<name>[^\=]+)\/(?<num>[^\=]+)/)
         self.name = titlecase_arg(args.name)
         self.num = trim_arg(args.num)
       end
