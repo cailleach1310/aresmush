@@ -21,11 +21,11 @@ module AresMUSH
           elsif model.ranks_rank != "Adept"
             client.emit_failure "Only adept characters can have their marque acknowledged!"
             return nil
-          elsif model.marque < 100
+          elsif model.marque != "100"
             client.emit_failure "The marque is not yet complete!"
             return nil
           else 
-  #          model.update(marque: nil)
+            model.update(marque: nil)
             model.update(ranks_rank: "Courtesan")
             client.emit_success "The marque has been acknowledged! #{model.name} now has new status of fully marqued courtesan."
             return true
