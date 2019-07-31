@@ -28,7 +28,8 @@ module AresMUSH
             model.update(marque: 0)
             model.update(ranks_rank: "Adept")
             client.emit_success "The marque has been set to zero! #{model.name} now has new status of adept."
-          return true
+            return true
+          end   
         end
       end  
     end
