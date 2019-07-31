@@ -17,7 +17,7 @@ module AresMUSH
             client.emit_failure "The marque is not yet complete!"
             return nil
           else 
-            model.update(marque: nil)
+            model.delete(marque)
             model.update(ranks_rank: "Courtesan")
             client.emit_success "The marque has been acknowledged! #{model.name} now has new status of fully marqued courtesan."
             return true
