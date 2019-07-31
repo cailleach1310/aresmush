@@ -24,8 +24,8 @@ module AresMUSH
             client.emit_failure "Only adept characters can have their marque raised!"
             return nil
           else 
-            self.marque = model.marque + self.num
-            model.update(marque: self.marque < 100 ? self.marque : 100)
+            self.marque = Integer(model.marque) + self.num
+            model.update(marque: Integer(self.marque) < 100 ? self.marque : 100)
             client.emit_success "#{model.name}'s marque has been raised to #{model.marque} percent."
             return true
           end
