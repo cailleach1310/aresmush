@@ -4,7 +4,15 @@ module AresMUSH
       include CommandHandler
       
       attr_accessor :name
-   
+ 
+      def parse_args
+        self.name = trim_arg(cmd.args)
+      end
+      
+      def required_args
+        [ self.name ]
+      end
+       
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
           if !enactor.has_role?("admin")
