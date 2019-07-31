@@ -7,8 +7,7 @@ module AresMUSH
 
       
       def parse_args
-        args = cmd.parse_args( /(?<name>+/)
-        self.name = titlecase_arg(args.name)
+        self.name = trim_arg(cmd.args)
       end
       
       def required_args
