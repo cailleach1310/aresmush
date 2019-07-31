@@ -13,7 +13,7 @@ module AresMUSH
           client.emit_failure "Only adept characters can have their marque raised!"
           return nil
         else 
-          self.marque = target.marque + value
+          self.marque = min((target.marque + value),100)
           target.update(marque: self.marque)
           client.emit_success "#{target.name}'s marque has been raised to #{target.marque}."
           return true
