@@ -1,5 +1,5 @@
 module AresMUSH
   class Character
-    attribute :marque
+    attribute :marque => DataType::Integer
   end
 end
