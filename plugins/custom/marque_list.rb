@@ -4,11 +4,11 @@ module AresMUSH
       include CommandHandler
       
       def handle
-        <%= header %>
+#        <%= header %>
         client.emit("%xcList of Adepts%xn:%r%r")
         Character.all.select { |c| c.ranks_rank == 'Adept' }.map 
           { |c| client.emit("* #{c.name} -- Marque at #{c.marque}% -- last on: #{c.last_on}") }
-        <%= footer %>
+#        <%= footer %>
       end
     end  
   end   
