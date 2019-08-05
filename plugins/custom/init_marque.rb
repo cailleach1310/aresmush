@@ -25,6 +25,7 @@ module AresMUSH
          else 
             model.update(marque: 0)
             model.update(ranks_rank: "Adept")
+            Achievements.award_achievement(model, "debuted")
             client.emit_success "The marque has been set to zero! #{model.name} now has new status of adept."
             return true
           end   
