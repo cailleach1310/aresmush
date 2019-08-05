@@ -29,6 +29,8 @@ module AresMUSH
           return RaiseMarqueCmd
         when "acknowledge"
           return AcknMarqueCmd
+        when "list"
+          return ListMarqueCmd
         else
           return MarqueCmd
         end
