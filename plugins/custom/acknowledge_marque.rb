@@ -27,6 +27,7 @@ module AresMUSH
           else 
             model.update(marque: nil)
             model.update(ranks_rank: "Courtesan")
+            Achievements.award_achievement(model, "marque_acknowledged")
             client.emit_success "The marque has been acknowledged! #{model.name} now has new status of fully marqued courtesan."
             return true
           end
