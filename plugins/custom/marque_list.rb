@@ -11,4 +11,5 @@ module AresMUSH
 #        <%= footer %>
       end
     end  
-  end   
+  end
+end
