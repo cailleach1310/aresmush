@@ -15,7 +15,7 @@ module AresMUSH
           return nil
         else
           enactor.update(scion: self.scion)
-          client.emit_success "Scion power set to #{self.scion}!"
+          client.emit_success "Scion power has been set to #{self.scion}!"
         end
       end
     end
