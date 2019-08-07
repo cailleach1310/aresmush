@@ -10,8 +10,13 @@ module AresMUSH
       end
 
       def handle
-        enactor.update(scion: self.scion)
-        client.emit_success "Scion power set to #{self.scion}!"
+        if Chargen.check_chargen_locked(enactor)
+          client.emit_failure "You can't set your scion power outside of chargen! Please contact staff."
+          return nil
+        else
+          enactor.update(scion: self.scion)
+          client.emit_success "Scion power set to #{self.scion}!"
+        end
       end
     end
   end
