@@ -3,7 +3,7 @@ module AresMUSH
     class RaiseMarqueCmd
       include CommandHandler
       
-      attr_accessor :name, :num, :marque
+      attr_accessor :name, :num
 
       def parse_args
         args = cmd.parse_args( /(?<name>[^\=]+)\=(?<num>.+)/)
@@ -24,8 +24,7 @@ module AresMUSH
             client.emit_failure "Only adept characters can have their marque raised!"
             return nil
           else 
-            self.marque = model.marque.to_i + self.num
-            model.update(marque: self.marque < 100 ? self.marque : 100)
+            Custom.do_marque_raise(model, self.num)
             client.emit_success "#{model.name}'s marque has been raised to #{model.marque} percent."
             return true
           end
