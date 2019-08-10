@@ -14,9 +14,9 @@ module AresMUSH
         adepts = Character.all.select { |c| c.ranks_rank == 'Adept' }
         adepts.each do |a|
           Custom.do_marque_raise(a, amount)
-          client.emit("#{a.name}'s marque raised to #{a.marque}!")
           Mail.send_mail([a.name], t(title), message, nil)
         end
+        Mail.send_mail("Admin", title, "Marque raise for the previous month has been handled for the following adepts:%r%r #{names.join(", ")}")
       end
     end
   end
