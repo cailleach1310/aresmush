@@ -18,5 +18,6 @@ module AresMUSH
           Mail.send_mail([a.name], t(title), message, nil)
         end
       end
+    end
   end
-End
+end
