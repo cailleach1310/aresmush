@@ -17,7 +17,7 @@ module AresMUSH
           Mail.send_mail([a.name], title, message, nil)
         end
         names = adepts.map { |c| c.name }
-        Mail.send_mail("Thelesis", title, "Marque raise for the previous month has been handled for the following adepts:%r%r #{names.join(", ")}")
+        Mail.send_mail("Thelesis", title, "Marque raise for the previous month has been handled for the following adepts:%r%r #{names.join(", ")}", nil)
       end
     end
   end
