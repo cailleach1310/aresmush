@@ -16,8 +16,11 @@ module AresMUSH
           Custom.do_marque_raise(a, amount)
           Mail.send_mail([a.name], title, message, nil)
         end
-        names = adepts.map { |c| c.name }
-        Mail.send_mail("Thelesis", title, "Marque raise for the previous month has been handled for the following adepts:%r%r #{names.join(", ")}", nil)
+        names = adepts.map { |a| a.name }
+        Jobs.create_job("MISC", 
+               "Marque Raise Summary", 
+               "Marque raise for the previous month has been handled for the following adepts: #{names.join(", ")}", 
+               Game.master.system_character)          
       end
     end
   end
