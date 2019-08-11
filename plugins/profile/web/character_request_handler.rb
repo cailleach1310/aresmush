@@ -86,7 +86,7 @@ module AresMUSH
         {
           id: char.id,
           name: char.name,
-          goals: Website.format_markdown_for_html(char.goals),
+          goals: show_background ? Website.format_markdown_for_html(char.goals) : nil,
           marque: char.marque,
           name_and_nickname: Demographics.name_and_nickname(char),
           all_fields: all_fields,
