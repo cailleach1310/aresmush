@@ -12,7 +12,7 @@ module AresMUSH
 
         amount = Global.read_config('custom', 'monthly_raise_amount')
         message = Global.read_config('custom', 'monthly_raise_message') 
-        title = Global.read_config("custom", "monthly_raise_title") + month
+        title = Global.read_config("custom", "monthly_raise_title") + " " + month
         adepts = Character.all.select { |c| c.ranks_rank == 'Adept' }
         adepts.each do |a|
           Custom.do_marque_raise(a, amount)
@@ -20,8 +20,8 @@ module AresMUSH
         end
         names = adepts.map { |a| a.name }
         Jobs.create_job("MISC", 
-               "Marque Raise Summary" + month, 
-               "Marque raise for the month #{month} has been handled for the following adepts: #{names.join(", ")}", 
+               "Marque Raise Summary" + " " + month, 
+               "Automatic monthly marque raise for #{month} has been handled for the following adepts: #{names.join(", ")}", 
                Game.master.system_character)          
       end
     end
