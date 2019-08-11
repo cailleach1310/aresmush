@@ -6,11 +6,13 @@ module AresMUSH
         config = Global.read_config("custom", "monthly_raise_cron")
         return if !Cron.is_cron_match?(config, event.time)
         
-        Global.logger.debug "Monthly marque raise."
+        month = Date::MONTHNAMES[Date.today.month]
+        
+        Global.logger.debug "Monthly marque raise for #{month}."
 
         amount = Global.read_config('custom', 'monthly_raise_amount')
-        message = Global.read_config('custom', 'monthly_raise_message')
-        title = Global.read_config("custom", "monthly_raise_title")
+        message = Global.read_config('custom', 'monthly_raise_message') 
+        title = Global.read_config("custom", "monthly_raise_title") + month
         adepts = Character.all.select { |c| c.ranks_rank == 'Adept' }
         adepts.each do |a|
           Custom.do_marque_raise(a, amount)
@@ -18,8 +20,8 @@ module AresMUSH
         end
         names = adepts.map { |a| a.name }
         Jobs.create_job("MISC", 
-               "Marque Raise Summary", 
-               "Marque raise for the previous month has been handled for the following adepts: #{names.join(", ")}", 
+               "Marque Raise Summary" + month, 
+               "Marque raise for the month #{month} has been handled for the following adepts: #{names.join(", ")}", 
                Game.master.system_character)          
       end
     end
