@@ -32,9 +32,14 @@ module AresMUSH
         last_name = names[-1]
       end
       rank_str = char.rank.blank? ? "" : "#{char.rank} "
-      callsign = char.demographic(:callsign)
-      callsign_str =  callsign.blank? ? "" : "\"#{callsign}\" "
-      "#{rank_str}#{first_name} #{callsign_str}#{last_name}"
+      test = names[-2]
+      if (test == "nó") || (test == "no") || (test == "de") || (test == "van")
+        fill_str = test + " "
+      elsif (test == "la") && (names[-3] == "de")
+        fill_str = "de la "
+      else fill_str = ""
+      end
+      "#{rank_str}#{first_name} #{fill_str}#{last_name}"
     end
     
     def self.set_rank(char, rank, allow_all = false)
