@@ -32,10 +32,10 @@ module AresMUSH
         last_name = names[-1]
       end
       rank_str = char.rank.blank? ? "" : "#{char.rank} "
-      test = names[-2]
+      test = names[-2].downcase
       if (test == "nó") || (test == "no") || (test == "de") || (test == "van")
         fill_str = test + " "
-      elsif (test == "la") && (names[-3] == "de")
+      elsif (test == "la") && (names[-3].downcase == "de")
         fill_str = "de la "
       else fill_str = ""
       end
