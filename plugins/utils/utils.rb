@@ -82,8 +82,15 @@ module AresMUSH
         return GetNotesRequestHandler
       when "saveNotes"
         return SaveNotesRequestHandler
+      when "emojiList"
+        return EmojiListRequestHandler
       end
       nil
+    end
+    
+    def self.check_config
+      validator = GameConfigValidator.new
+      validator.validate
     end
   end
 end
