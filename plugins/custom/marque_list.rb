@@ -15,7 +15,6 @@ module AresMUSH
         Character.all.select { |c| c.ranks_rank == 'Adept' }.map { |c| client.emit("* #{c.name} -- Marque at #{c.marque}% -- last on: #{c.last_on}") }
         <%= footer %>
       end
-      end
     end  
   end
 end
