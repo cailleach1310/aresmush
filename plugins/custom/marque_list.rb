@@ -10,10 +10,10 @@ module AresMUSH
 #          client.emit template.render
 #        end
 #      end
-        <%= header %>
-        client.emit("%xcList of Adepts%xn:%r%r")
-        Character.all.select { |c| c.ranks_rank == 'Adept' }.map { |c| client.emit("* #{c.name} -- Marque at #{c.marque}% -- last on: #{c.last_on}") }
-        <%= footer %>
+#        <%= header %>
+#        client.emit("%xcList of Adepts%xn:%r%r")
+#        Character.all.select { |c| c.ranks_rank == 'Adept' }.map { |c| client.emit("* #{c.name} -- Marque at #{c.marque}% -- last on: #{c.last_on}") }
+#        <%= footer %>
       end
     end  
   end
