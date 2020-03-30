@@ -10,13 +10,17 @@ module AresMUSH
       end
       
       def fields
-        Global.read_config("marque", "marque_fields")
+        Global.read_config("custom", "marque_fields")
       end
       
       def marque_header
-        Global.read_config("marque", "marque_header")
+        Global.read_config("custom", "marque_header")
       end
       
+      def chars_by_handle
+        self.adept_chars.sort_by{ |c| c.name }
+      end
+
       def show_field(char, field_config)
         field = field_config["field"]
         value = field_config["value"]

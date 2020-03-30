@@ -37,6 +37,12 @@ module AresMUSH
       when 'handle'
         char.handle ? "@#{char.handle.name}" : ""
         
+      when 'marque'
+        char.marque
+
+      when 'last_on'
+        char.last_on
+
       else 
         nil
       end
