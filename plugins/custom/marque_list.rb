@@ -4,17 +4,14 @@ module AresMUSH
       include CommandHandler
       
       def handle
-#        Character.all.select { |model| model.ranks_rank == 'Adept' }.map 
-#          client.emit("* #{c.name} -- Marque at #{c.marque}'%' -- last on: #{c.last_on}") }ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
-#          template = BorderedDisplayTemplate.new model.name model.marque model.last_on, "List of Adepts"
-#          client.emit template.render
-#        end
-#      end
-#        <%= header %>
-#        client.emit("%xcList of Adepts%xn:%r%r")
-#        Character.all.select { |c| c.ranks_rank == 'Adept' }.map { |c| client.emit("* #{c.name} -- Marque at #{c.marque}% -- last on: #{c.last_on}") }
-#        <%= footer %>
+        adept_chars = all.select { |char| ranks_rank == 'Adept' }
+                
+        template = MarqueTemplate.new adept_chars
+        client.emit template.render
+
       end
     end  
   end
 end
+
+
