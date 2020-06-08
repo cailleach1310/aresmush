@@ -23,6 +23,9 @@ module AresMUSH
           elsif model.ranks_rank != "Adept"
             client.emit_failure "Only adept characters can have their marque raised!"
             return nil
+          elsif !enactor.has_role?("approved")
+            client.emit_failure "Only approved adepts can have their marque raised!"
+            return nil
           else 
             Custom.do_marque_raise(model, self.num)
             client.emit_success "#{model.name}'s marque has been raised to #{model.marque} percent."
