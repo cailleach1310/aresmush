@@ -1,6 +1,10 @@
 module AresMUSH
   module Custom
 
+    def scions
+    	Global.read_config("custom", "scion_list")
+  	end
+
     def self.do_marque_raise(target, amount)
       new_marque = target.marque.to_i + amount
       target.update(marque: new_marque < 100 ? new_marque : 100)
