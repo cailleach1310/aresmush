@@ -15,11 +15,11 @@ module AresMUSH
       msg = ""
       
       if (rank == "Adept" && !(char.marque))
-         msg = "%xrAdept concepts need to set the starting percentage of their marque!%xn"
+         msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
       
       if (scion && !(char.scion))
-         msg = msg + "%xrScions need to set their scion power!%xn"
+         msg = msg + "%xrScions need to set their scion power! %xn"
       end
       
       if (msg == "")
