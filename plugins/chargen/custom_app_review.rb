@@ -10,7 +10,7 @@ module AresMUSH
       # faction.
       #
       rank = char.ranks_rank
-      #scion = (char.fs3_advantages.find(name: "Scion Power").first)
+      # scion = (char.fs3_advantages.find(name: "Scion Power").first)
       
       msg = ""
       
@@ -22,7 +22,7 @@ module AresMUSH
       #    msg = msg + "%xrScions need to set their scion power!%xn"
       # end
       
-      If (msg == "")
+      if (msg == "")
          msg = t('chargen.ok')
       end
 
