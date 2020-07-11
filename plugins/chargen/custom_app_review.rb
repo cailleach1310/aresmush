@@ -10,17 +10,17 @@ module AresMUSH
       # faction.
       #
       rank = char.ranks_rank
-      scion = (char.fs3_advantages.find(name: "Scion Power").first)
+      #scion = (char.fs3_advantages.find(name: "Scion Power").first)
       
       msg = ""
       
       if (rank == "Adept" && !(char.marque))
-         msg = "%xrAdept concepts need to set their marque!%xn"
+         msg = "%xrAdept concepts need to set the starting percentage of their marque!%xn"
       end
       
-      if (scion && !(char.scion))
-         msg = msg + "%xrScions need to set their scion power!%xn"
-      end
+      # if (scion && !(char.scion))
+      #    msg = msg + "%xrScions need to set their scion power!%xn"
+      # end
       
       If (msg == "")
          msg = t('chargen.ok')
