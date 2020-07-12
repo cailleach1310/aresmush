@@ -1,7 +1,7 @@
 module AresMUSH
   module Custom
 
-    def scions
+    def self.scions
     	Global.read_config("custom", "scion_list")
   	end
 
