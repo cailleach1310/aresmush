@@ -2,7 +2,7 @@ module AresMUSH
   module Custom
 
     def self.scions
-    	Global.read_config("custom", "scion_list")
+    	return Global.read_config("custom", "scion_list")
   	end
 
     def self.do_marque_raise(target, amount)
