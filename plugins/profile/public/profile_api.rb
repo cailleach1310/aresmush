@@ -40,6 +40,9 @@ module AresMUSH
       when 'marque'
         char.marque
 
+      when 'scion'
+        char.scion
+
       when 'last_on'
         char.last_on
 
