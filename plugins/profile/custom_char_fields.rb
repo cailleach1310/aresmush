@@ -19,8 +19,8 @@ module AresMUSH
       # Example: return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_chargen(char)
         return { goals: Website.format_input_for_html(char.goals),
-          marque: Website.format_input_for_html(char.marque),
-          scion: Website.format_input_for_html(char.scion) }
+          marque: Website.format_input_for_html(char.custom.marque),
+          scion: Website.format_input_for_html(char.custom.scion) }
       end
       
       # Custom fields will be in char_data[:custom]
