@@ -69,6 +69,7 @@ module AresMUSH
           groups: groups,
           background: Website.format_input_for_html(char.background),
           rp_hooks: hooks,
+          goals: goals,
           profile_image: char.profile_image,
           desc: Website.format_input_for_html(char.description),
           shortdesc: Website.format_input_for_html(char.shortdesc),
