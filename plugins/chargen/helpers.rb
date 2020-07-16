@@ -212,6 +212,7 @@ module AresMUSH
          desc: desc_app,
          ranks: ranks_app,
          hooks: hooks_app,
+         goals: char.goals,
          name: char.name,
          id: char.id,
          job: char.approval_job ? char.approval_job.id : nil,
