@@ -37,6 +37,9 @@ module AresMUSH
       when 'handle'
         char.handle ? "@#{char.handle.name}" : ""
         
+      when 'goals'
+        char.goals
+
       when 'marque'
         char.marque
 
