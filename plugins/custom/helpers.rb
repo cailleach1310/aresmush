@@ -24,7 +24,8 @@ module AresMUSH
       if !char.scion
         return false
       else
-        return { {{self.scions}}.member?(char.scion) }
+#        return { {{self.scions}}.member?(char.scion) }
+        return true
       end
     end
   
