@@ -1,5 +1,16 @@
 module AresMUSH
   module Chargen
+
+    def self.has_scion_set?(char)
+      if !char.scion
+        return false
+      else
+#        return { {{self.scions}}.member?(char.scion) }
+        return true
+      end
+    end
+  
+    
     def self.custom_app_review(char)
             
       # If you don't want to have any custom app review steps, return nil
@@ -18,7 +29,7 @@ module AresMUSH
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
       
-      if (scion && !(custom.has_scion_set?(char)))
+      if (scion && !(self.has_scion_set?(char)))
          msg = msg + "%xrScions need to set their scion power! %xn"
       end
       
