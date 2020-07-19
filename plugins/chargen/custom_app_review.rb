@@ -22,7 +22,7 @@ module AresMUSH
       if (scion)
          if !(char.scion)
            msg = msg + "%xrScions need to set their scion power! %xn"
-         elsif !(Custom.has_scion_set?(char)))
+         elsif !(Custom.has_scion_set?(char))
            msg = msg + "%xrInvalid scion! Please fix!%xn"
          end
       end
