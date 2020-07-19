@@ -14,14 +14,6 @@ module AresMUSH
       Global.read_config('custom', 'achievements')
     end
     
-    def self.has_scion_set?(char)
-      if !char.scion
-        return false
-      else
-        return { self.scions.member?(char.scion) }
-      end
-    end
-
     def self.get_cmd_handler(client, cmd, enactor)      
       case cmd.root
       when "goals"
