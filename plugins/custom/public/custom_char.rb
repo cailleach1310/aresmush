@@ -10,7 +10,7 @@ module AresMUSH
     end
 
     def self.is_adept?
-      if !self.marque
+      if !(self.ranks_rank == 'Adept')
         return false
       else
         return true
