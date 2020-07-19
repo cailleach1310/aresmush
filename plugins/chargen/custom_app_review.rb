@@ -19,7 +19,7 @@ module AresMUSH
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
       
-      if (scion && !(self.has_scion_set?(char)))
+      if (scion && !(char.has_scion_set?))
          msg = msg + "%xrScions need to set their scion power! %xn"
       end
       
