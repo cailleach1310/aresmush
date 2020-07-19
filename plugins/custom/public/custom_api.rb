@@ -9,7 +9,7 @@ module AresMUSH
       if !char.scion
         return false
       else
-        return { self.scions.member?(char.scion) }
+        return { Custom.scions.member?(char.scion) }
       end
     end
 
