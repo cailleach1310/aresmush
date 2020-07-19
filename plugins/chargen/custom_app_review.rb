@@ -10,12 +10,12 @@ module AresMUSH
       # give an alert if the character has chosen an invalid position for their 
       # faction.
       #
-      rank = char.ranks_rank
+#      rank = char.ranks_rank
       scion = (char.fs3_advantages.find(name: "Scion Power").first)
       
       msg = ""
       
-      if (rank == "Adept" && !(char.marque))
+      if (Custom.is_adept?(char) && !(char.marque))
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
       
