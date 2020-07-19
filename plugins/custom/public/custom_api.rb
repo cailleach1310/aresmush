@@ -1,0 +1,21 @@
+module AresMUSH
+  class Custom
+
+    def self.has_scion_set?(char)
+      if !char.scion
+        return false
+      else
+        return { self.scions.member?(char.scion) }
+      end
+    end
+
+    def self.is_adept?(char)
+      if !(char.ranks_rank == 'Adept')
+        return false
+      else
+        return true
+      end
+    end
+
+ end
+end
