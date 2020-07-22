@@ -14,7 +14,11 @@ module AresMUSH
     end
 
     def self.is_adept?(char)
-       return { (char.ranks_rank == "Adept") }
+       if (char.ranks_rank == "Adept")
+         return true
+       else 
+         return false
+       end
     end
 
  end
