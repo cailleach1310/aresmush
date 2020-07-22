@@ -1,6 +1,6 @@
-module AresMUSH
-  class Character
-    attribute :scion
+# module AresMUSH
+#  class Character
+#    attribute :scion
 #    attribute :sp
-  end
-end
+#  end
+# end
