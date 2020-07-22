@@ -23,13 +23,13 @@ module AresMUSH
         else
           return GoalsCmd
         end
-      when "scion"
-        case cmd.switch
-        when "set"
-          return SetScionCmd
-        else
-          return ScionCmd
-        end
+#      when "scion"
+#        case cmd.switch
+#        when "set"
+#          return SetScionCmd
+#        else
+#          return ScionCmd
+#        end
       when "marque"
         case cmd.switch
         when "set"
