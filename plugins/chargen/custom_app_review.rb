@@ -11,7 +11,7 @@ module AresMUSH
       # faction.
       #
 #      rank = char.ranks_rank
-      scion = (char.fs3_advantages.find(name: "Scion Power").first)
+#      scion = (char.fs3_advantages.find(name: "Scion Power").first)
       
       msg = ""
       
