@@ -19,13 +19,15 @@ module AresMUSH
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
       
-      if (scion)
-         if !(char.scion)
-           msg = msg + "%xrScions need to set their scion power! %xn"
-         elsif !(Custom.has_scion_set?(char))
-           msg = msg + "%xrInvalid scion! Please fix!%xn"
-         end
-      end
+#      if (scion)
+#         if !(char.scion)
+# check for valid scion in group 'scion'
+#        if !(Custom.has_scion_set?(char))
+#           msg = msg + "%xrScions need to set their scion power! %xn"
+#         elsif !(Custom.has_scion_set?(char))
+#           msg = msg + "%xrInvalid scion! Please fix!%xn"
+#         end
+#      end
       
       if (msg == "")
          msg = t('chargen.ok')
