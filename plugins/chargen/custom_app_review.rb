@@ -14,7 +14,8 @@ module AresMUSH
       
       msg = ""
       
-      if (Custom.is_adept?(char) && !(char.marque))
+      rank = char.ranks_rank
+      if ((rank == "Adept") && !(char.marque))
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
             
