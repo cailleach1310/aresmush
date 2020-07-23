@@ -10,7 +10,6 @@ module AresMUSH
       # give an alert if the character has chosen an invalid position for their 
       # faction.
       #
-#      scion = (char.fs3_advantages.find(name: "Scion Power").first)
       
       msg = ""
       
@@ -19,6 +18,11 @@ module AresMUSH
          msg = "%xrAdept concepts need to set the starting percentage of their marque! %xn"
       end
             
+      scion_power = (char.fs3_advantages.find(name: "Scion Power").first)
+      if (scion_power && (!char.groups["scion"] || (char.groups["scion"] == "None")) )
+         msg = msg + "%xrScions need to set their scion power! %xn"
+      end
+      
       if (msg == "")
          msg = t('chargen.ok')
       end
