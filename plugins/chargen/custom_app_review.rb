@@ -24,7 +24,7 @@ module AresMUSH
       end
       
       connections = (char.fs3_advantages.find(name: "Connections").first)
-      if ((connections) && (!(char.connections)))
+      if ((connections) && (!(char.connections) || (char.connections == "")))
          msg = msg + "%xrPlease specify your connections! %xn"
       end
  
