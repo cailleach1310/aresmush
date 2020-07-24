@@ -5,6 +5,8 @@ summary: Scion merits and their benefits.
 # Scion Merit
 You can choose the advantage of Scion Merit in chargen. The advantage can be bought at levels 1-3, each level at the cost of 2 points. Please be aware that each level needs a justification in your BG, as higher levels require special constellations in parents and perhaps even in the grandparents of your character. Depending on the level of your scion power, staff can allow you special bonuses in situations if your action is made in the spirit and area of your Companion. We don't have a coded scion power system so far, as any particular use will have to be sanctioned by staff anyway. You are of course free to include certain hints at angelic blood into your poses.
 
+The scion of choice will show in your profile, after you have chosen one in the groups during character generation. Please note that the scion power can't be added after getting approved.
+
 ## Prerequisites
 Taking a scion merit in chargen is only possible for characters of D'Angeline nobility. The scion chosen must be the patron angel of the home province of one of the two parents. For example, if you have a lady of l'Envers with a Shahrizai as her mother, there would be a choice between the scions Naamah and Kushiel. In this case, the lady in question can only take the scion merit advantage at level one.
 
