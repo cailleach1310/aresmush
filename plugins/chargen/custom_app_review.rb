@@ -23,6 +23,11 @@ module AresMUSH
          msg = msg + "%xrScions need to set their scion power! %xn"
       end
       
+      connections = (char.fs3_advantages.find(name: "Connections").first)
+      if ((connections) && (!(char.connections)))
+         msg = msg + "%xrPlease specify your connections! %xn"
+      end
+ 
       if (msg == "")
          msg = t('chargen.ok')
       end
