@@ -23,7 +23,7 @@ module AresMUSH
         else
           return GoalsCmd
         end
-      when "scion"
+      when "connections"
         case cmd.switch
         when "set"
           return SetConnectionsCmd
