@@ -43,8 +43,8 @@ module AresMUSH
       when 'marque'
         char.marque
 
-      when 'scion'
-        char.scion
+      when 'connections'
+        char.connections
 
       when 'last_on'
         char.last_on
