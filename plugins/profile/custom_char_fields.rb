@@ -8,7 +8,7 @@ module AresMUSH
       def self.get_fields_for_viewing(char, viewer)
 #        return { goals: Website.format_markdown_for_html(char.goals) }
         return { goals: Website.format_markdown_for_html(char.goals),
-          marque: Website.format_markdown_for_html(char.marque),
+          marque: char.marque.to_i,
           connections: Website.format_markdown_for_html(char.connections) }
       end
     
