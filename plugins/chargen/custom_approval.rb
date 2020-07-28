@@ -8,7 +8,7 @@ module AresMUSH
       # someone to a role based on their faction:
       #
        faction = char.group("faction")
-       role = Role.find_by_name(faction)
+       role = Role.find_one_by_name(faction)
       
        if (role)
          char.roles.add role
