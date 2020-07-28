@@ -13,7 +13,16 @@ module AresMUSH
        if (role)
          char.roles.add role
        end
-      # See https://www.aresmush.com/tutorials/config/chargen.html for details.
+      
+      # auto-tagging the char page 
+      tag_list = char.group("Faction")
+       if ((tag_list != "Commoner") && (tag_list != "Clergy"))
+       { tag_list = tag_list + " " + char.group("House") }
+       end
+       tags = (tag_list || []).map { |t| t.downcase }.select { |t| !t.blank? }
+       char.update(profile_tags: tags)
+
+             # See https://www.aresmush.com/tutorials/config/chargen.html for details.
     end
   end
 end
