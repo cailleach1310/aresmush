@@ -7,7 +7,7 @@ module AresMUSH
       # Otherwise, do what you need to do.  Here's an example of how to add
       # someone to a role based on their faction:
       #
-       faction = char.group("Faction")
+       faction = char.group("faction")
        role = Role.find_by_name(faction)
       
        if (role)
@@ -15,9 +15,9 @@ module AresMUSH
        end
       
        # auto-tagging the char page 
-       tag_list = char.group("Faction")
+       tag_list = char.group("faction")
        if ((tag_list != "Commoner") && (tag_list != "Clergy"))
-          tag_list = tag_list + " " + char.group("House")
+          tag_list = tag_list + " " + char.group("house")
        end
        tags = (tag_list || []).map { |t| t.downcase }.select { |t| !t.blank? }
        char.update(profile_tags: tags)
