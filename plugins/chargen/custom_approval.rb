@@ -20,17 +20,17 @@ module AresMUSH
        char.update(profile_tags: tags)
 
       # auto-joining to the faction channel: still tbd
-      standard_channel = {
-         "Courtesan" => "Courtesan"
-         "Noble" => "Nobility"
-         "Commoner" => "Commoner"
-         "Clergy" => "Clergy"
-      }
-
-      Channels.add_to_channels(client, char, standard_channel[faction])
-      if (client)
-          client.emit_success t('channels.channel_command_hint')
-      end
+#      standard_channel = {
+#         "Courtesan" => "Courtesan"
+#         "Noble" => "Nobility"
+#         "Commoner" => "Commoner"
+#         "Clergy" => "Clergy"
+#      }
+#
+#      Channels.add_to_channels(client, char, standard_channel[faction])
+#      if (client)
+#          client.emit_success t('channels.channel_command_hint')
+#      end
     end
   end
 end
