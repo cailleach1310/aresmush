@@ -15,9 +15,10 @@ module AresMUSH
        end
       
        # auto-tagging the char page 
-       tag_list = char.group("faction")
-       if ((tag_list != "Commoner") && (tag_list != "Clergy"))
-          tag_list = tag_list + " " + char.group("house")
+       tag_list = []
+       tag_list.push(faction)
+       if ((faction != "Commoner") && (faction != "Clergy"))
+          tag_list.push(char.group("house"))
        end
        tags = (tag_list || []).map { |t| t.downcase }.select { |t| !t.blank? }
        char.update(profile_tags: tags)
