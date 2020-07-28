@@ -103,7 +103,6 @@ module AresMUSH
       
       char.update(cg_background: Website.format_input_for_mush(chargen_data[:background]))
       char.update(idle_lastwill: Website.format_input_for_mush(chargen_data[:lastwill]))
-      char.update(goals: Website.format_input_for_mush(chargen_data[:goals]))
       char.update(rp_hooks: Website.format_input_for_mush(chargen_data[:rp_hooks]))
       char.update(description: Website.format_input_for_mush(chargen_data[:desc]))
       char.update(shortdesc: Website.format_input_for_mush(chargen_data[:shortdesc]))
@@ -212,7 +211,6 @@ module AresMUSH
          desc: desc_app,
          ranks: ranks_app,
          hooks: hooks_app,
-         goals: char.goals,
          name: char.name,
          id: char.id,
          job: char.approval_job ? char.approval_job.id : nil,
