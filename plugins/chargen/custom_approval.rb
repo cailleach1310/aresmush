@@ -1,9 +1,18 @@
 module AresMUSH
   module Chargen
-       
-    def self.custom_approval(char)
 
-       faction = char.group("faction")
+    def self.standard_channel(char)
+      f = char.group("faction")
+      if (f == "Noble")
+        return "Nobility"
+      else
+        return faction
+      end
+    end
+    
+    def self.custom_approval(char)
+     
+      faction = char.group("faction")
        role = Role.find_one_by_name(faction)
       
        if (role)
@@ -22,8 +31,9 @@ module AresMUSH
 
       # auto-joining to the faction channel happens in the channels plugin
       c = []
-      c.push(Custom.standard_channel(char))
+      c.push(self.standard_channel(char))
       Channels.add_to_channels(nil, char, c)
     end
+    
   end
 end
