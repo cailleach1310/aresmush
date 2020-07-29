@@ -6,7 +6,7 @@ module AresMUSH
       if (f == "Noble")
         return "Nobility"
       else
-        return faction
+        return f
       end
     end
     
@@ -30,8 +30,7 @@ module AresMUSH
        char.update(profile_tags: tags)
 
       # auto-joining to the faction channel happens in the channels plugin
-      c = []
-      c.push(self.standard_channel(char))
+      c = self.standard_channel(char)
       Channels.add_to_channels(nil, char, c)
     end
     
