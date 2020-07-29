@@ -29,7 +29,7 @@ module AresMUSH
        tags = (tag_list || []).map { |t| t.downcase }.select { |t| !t.blank? }
        char.update(profile_tags: tags)
 
-      # auto-joining to the faction channel happens in the channels plugin
+      # auto-joining to the faction channel
       c = []
       c.push(self.standard_channel(char))
       Channels.add_to_channels(nil, char, c)
