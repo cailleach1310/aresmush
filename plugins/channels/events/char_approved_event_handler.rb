@@ -6,7 +6,7 @@ module AresMUSH
         char = Character[event.char_id]
                 
         channels = Global.read_config("channels", "approved_channels")  
-        channels.push(Custom.standard_channel(char.groups("faction"))
+        channels.push(Custom.standard_channel(char))
         Channels.add_to_channels(client, char, channels)
         
         if (client)
