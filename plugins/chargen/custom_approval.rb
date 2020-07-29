@@ -1,16 +1,16 @@
 module AresMUSH
   module Chargen
-
-    def standard_channel(faction)
-      if (faction == "Noble")
-        return "Nobility"
-      else
-        return faction
-      end
-    end
-    
+   
     def self.custom_approval(char)
-            
+
+       def standard_channel(faction)
+         if (faction == "Noble")
+           return "Nobility"
+         else
+           return faction
+         end
+       end
+      
        faction = char.group("faction")
        role = Role.find_one_by_name(faction)
       
