@@ -21,12 +21,9 @@ module AresMUSH
        char.update(profile_tags: tags)
 
       # auto-joining to the faction channel happens in the channels plugin
-#      channel = []
-#      channel.push(self.standard_channel(faction))
-#      Channels.add_to_channels(client, char, channel)
-#      if (client)
-#          client.emit_success t('channels.channel_command_hint')
-#      end
+      c = []
+      c.push(Custom.standard_channel(char))
+      Channels.add_to_channels(nil, char, c)
     end
   end
 end
