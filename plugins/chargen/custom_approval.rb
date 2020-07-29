@@ -1,16 +1,16 @@
 module AresMUSH
   module Chargen
    
+    def self.standard_channel(faction)
+      if (faction == "Noble")
+        return "Nobility"
+      else
+        return faction
+      end
+    end
+      
     def self.custom_approval(char)
 
-       def standard_channel(faction)
-         if (faction == "Noble")
-           return "Nobility"
-         else
-           return faction
-         end
-       end
-      
        faction = char.group("faction")
        role = Role.find_one_by_name(faction)
       
@@ -30,7 +30,7 @@ module AresMUSH
 
       # auto-joining to the faction channel
       channel = []
-      channel.push(standard_channel(faction))
+      channel.push(self.standard_channel(faction))
       Channels.add_to_channels(client, char, channel)
       if (client)
           client.emit_success t('channels.channel_command_hint')
