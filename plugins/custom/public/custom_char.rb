@@ -6,7 +6,7 @@
     return { (self.ranks_rank == "Adept") }
   end
 
-  def self.set_connections?(char)
+  def self.set_connections?
     return { (self.fs3_advantages.find(name: "Connections").first) }
   end
 
