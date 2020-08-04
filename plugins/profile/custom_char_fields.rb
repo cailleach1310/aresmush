@@ -22,7 +22,9 @@ module AresMUSH
       def self.get_fields_for_chargen(char)
          return { goals: Website.format_input_for_html(char.goals),
            marque: Website.format_input_for_html(char.marque),
-           connections: Website.format_input_for_html(char.connections) }
+           connections: Website.format_input_for_html(char.connections),
+           is_adept?: t(char.ranks_rank == "Adept"),
+           set_connections?: t(char.fs3_advantages.find(name: "Connections").first) }
      end
       
       # Custom fields will be in char_data[:custom]
