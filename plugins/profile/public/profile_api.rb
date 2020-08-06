@@ -16,7 +16,7 @@ module AresMUSH
         Demographics.name_and_nickname(char)
 
       when 'rank'
-        char.rank
+        char.ranks_rank
 
       when 'status'
         status_color = Status.status_color(char.status)
