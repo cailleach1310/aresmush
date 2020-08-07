@@ -3,12 +3,12 @@ module AresMUSH
 #   attribute :is_adept, :type => DataType::Boolean
 #   attribute :set_connections, :type => DataType::Boolean
    
-  def is_adept
-    self.ranks_rank == "Adept"
+  def self.is_adept
+    return { self.ranks_rank == "Adept" }
   end
 
-  def set_connections
-    self.fs3_advantages.find(name: "Connections").first
+  def self.set_connections
+    return { self.fs3_advantages.find(name: "Connections").first }
   end
 
  end
