@@ -1,4 +1,5 @@
 module AresMUSH
+  module Custom
   class Character
    
   def is_adept
