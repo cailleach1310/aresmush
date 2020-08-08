@@ -2,23 +2,6 @@ module AresMUSH
   module Profile
     class CustomCharFields
 
-#      def self.is_adept(char)
-#         if (char.ranks_rank == "Adept")
-#           return true
-#         else
-#           return false
-#         end
-#      end
-#
-#      def self.set_connections(char)
-#         if (char.fs3_advantages.find(name: "Connections").first)
-#           return true
-#         else 
-#           return false
-#         end  
-#      end
-
-      
       # Return a hash of custom fields formatted for display
       # Note: Viewer may be nil if someone's looking at the character page without being logged in
       # Example: return { goals: Website.format_markdown_for_html(char.goals) }
@@ -40,7 +23,6 @@ module AresMUSH
          return { goals: Website.format_input_for_html(char.goals),
            marque: Website.format_input_for_html(char.marque),
            connections: Website.format_input_for_html(char.connections) }
-   #        is_adept: (char.ranks_rank == "Adept").to_i }
      end
       
       # Custom fields will be in char_data[:custom]
