@@ -2,21 +2,21 @@ module AresMUSH
   module Profile
     class CustomCharFields
 
-      def self.is_adept(char)
-         if (char.ranks_rank == "Adept")
-           return true
-         else
-           return false
-         end
-      end
-
-      def self.set_connections(char)
-         if (char.fs3_advantages.find(name: "Connections").first)
-           return true
-         else 
-           return false
-         end  
-      end
+#      def self.is_adept(char)
+#         if (char.ranks_rank == "Adept")
+#           return true
+#         else
+#           return false
+#         end
+#      end
+#
+#      def self.set_connections(char)
+#         if (char.fs3_advantages.find(name: "Connections").first)
+#           return true
+#         else 
+#           return false
+#         end  
+#      end
 
       
       # Return a hash of custom fields formatted for display
