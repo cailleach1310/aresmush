@@ -8,7 +8,7 @@ module AresMUSH
       def self.get_fields_for_viewing(char, viewer)
         return { goals: Website.format_markdown_for_html(char.goals),
           marque: char.marque.to_i,
-          connections: if (char.connections) Website.format_markdown_for_html(char.connections) end}
+          connections: Website.format_markdown_for_html(char.connections) }
       end
     
       # Return a hash of custom fields formatted for editing in the profile editor
