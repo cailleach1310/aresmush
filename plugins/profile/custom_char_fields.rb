@@ -39,13 +39,13 @@ module AresMUSH
       def self.save_fields_from_chargen(char, chargen_data)
         char.update(marque: chargen_data[:custom][:marque])
         web_goals = chargen_data[:custom][:goals]
-        if web_goals 
+        if (web_goals != "") 
           char.update(goals: web_goals)
         else
           char.update(goals: nil)
         end  
         web_con = chargen_data[:custom][:connections]
-        if web_con
+        if (web_con != "")
           char.update(connections: web_con)
         else
           char.update(connections: nil)
