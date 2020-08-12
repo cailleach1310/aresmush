@@ -24,7 +24,7 @@ module AresMUSH
            marque: Website.format_input_for_html(char.marque),
            connections: Website.format_input_for_html(char.connections),
            cg_adept: char.ranks_rank == "Adept",
-           cg_connections: char.fs3_advantages.find(name: "Connections").first }
+           cg_connections: char.fs3_advantages.find(name: "Connections").first != nil }
      end
       
       # Custom fields will be in char_data[:custom]
