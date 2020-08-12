@@ -30,8 +30,13 @@ module AresMUSH
       # Custom fields will be in char_data[:custom]
       # Example: char.update(goals: char_data[:custom][:goals])
       def self.save_fields_from_profile_edit(char, char_data)
-         char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))       
-      end
+         web_goals = char_data[:custom][:goals]
+         if (web_goals != "") 
+           char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
+         else
+           char.update(goals: nil)
+         end  
+       end
       
       # Save fields and return an array of any error messages.
       # Note Custom fields will be in chargen_data[:custom]
