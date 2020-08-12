@@ -37,9 +37,19 @@ module AresMUSH
       # Note Custom fields will be in chargen_data[:custom]
       # Example: char.update(goals: chargen_data[:custom][:goals])
       def self.save_fields_from_chargen(char, chargen_data)
-        char.update(goals: chargen_data[:custom][:goals])
         char.update(marque: chargen_data[:custom][:marque])
-        char.update(connections: chargen_data[:custom][:connections])
+        web_goals = chargen_data[:custom][:goals]
+        if web_goals 
+          char.update(goals: web_goals)
+        else
+          char.update(goals: nil)
+        end  
+        web_con = chargen_data[:custom][:connections]
+        if web_con
+          char.update(connections: web_con)
+        else
+          char.update(connections: nil)
+        end
         return []
       end
       
