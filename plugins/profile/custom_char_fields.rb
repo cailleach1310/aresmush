@@ -13,7 +13,9 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_markdown_for_html(char.goals) }
       def self.get_fields_for_viewing(char, viewer)
-        return {}
+        return { goals: Website.format_markdown_for_html(char.goals),
+          marque: char.marque.to_i,
+          connections: Website.format_markdown_for_html(char.connections) }
       end
     
       # Gets custom fields for the character profile editor.
@@ -26,8 +28,8 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_editing(char, viewer)
-        return {}
-      end
+       return { goals: Website.format_input_for_html(char.goals) }
+       end
 
       # Gets custom fields for character creation (chargen).
       #
@@ -38,7 +40,11 @@ module AresMUSH
       # @example
       #    return { goals: Website.format_input_for_html(char.goals) }
       def self.get_fields_for_chargen(char)
-        return {}
+         return { goals: Website.format_input_for_html(char.goals),
+           marque: Website.format_input_for_html(char.marque),
+           connections: Website.format_input_for_html(char.connections),
+           cg_adept: char.ranks_rank == "Adept",
+           cg_connections: char.fs3_advantages.find(name: "Connections").first != nil }
       end
       
       # Saves fields from profile editing.
@@ -52,7 +58,12 @@ module AresMUSH
       #        char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
       #        return []
       def self.save_fields_from_profile_edit(char, char_data)
-        return []
+         web_goals = char_data[:custom][:goals]
+         if (web_goals != "") 
+           char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
+         else
+           char.update(goals: nil)
+         end  
       end
       
       # Saves fields from character creation (chargen).
@@ -66,6 +77,19 @@ module AresMUSH
       #        char.update(goals: Website.format_input_for_mush(chargen_data[:custom][:goals]))
       #        return []
       def self.save_fields_from_chargen(char, chargen_data)
+        char.update(marque: chargen_data[:custom][:marque])
+        web_goals = chargen_data[:custom][:goals]
+        if (web_goals != "") 
+          char.update(goals: web_goals)
+        else
+          char.update(goals: nil)
+        end  
+        web_con = chargen_data[:custom][:connections]
+        if (web_con != "")
+          char.update(connections: web_con)
+        else
+          char.update(connections: nil)
+        end
         return []
       end
       
