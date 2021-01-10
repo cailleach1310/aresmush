@@ -12,7 +12,7 @@ module AresMUSH
 
         amount = Global.read_config('custom', 'monthly_raise_amount')
         message = Global.read_config('custom', 'monthly_raise_message') 
-        title = Global.read_config("custom", "monthly_raise_title") + " " + month
+        title = Global.read_config('custom', 'monthly_raise_title') + " " + month
         adepts = Character.all.select { |c| (c.ranks_rank == 'Adept') && (c.has_role?("approved")) }
         adepts.each do |a|
           Custom.do_marque_raise(a, amount)
