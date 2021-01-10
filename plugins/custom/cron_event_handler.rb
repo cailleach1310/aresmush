@@ -6,8 +6,9 @@ module AresMUSH
         config = Global.read_config("custom", "monthly_raise_cron")
         return if !Cron.is_cron_match?(config, event.time)
         
-        month = Date::MONTHNAMES[Date.today.month - 1]
-        
+        if (Date.today.month == 1) then month = Date::MONTHNAMES[12] 
+         else month = Date::MONTHNAMES[Date.today.month - 1] 
+        end 
         Global.logger.debug "Monthly marque raise for #{month}."
 
         amount = Global.read_config('custom', 'monthly_raise_amount')
