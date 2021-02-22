@@ -76,6 +76,7 @@ module AresMUSH
           profile_gallery: gallery_files.map { |g| Website.get_file_info(g) },
           playerbit: char.is_playerbit?,
           files: files,
+          custom: show_background ? CustomCharFields.get_fields_for_viewing(char, enactor) : nil,
           last_profile_version: char.last_profile_version ? char.last_profile_version.id : nil,
           show_notes: char == enactor || Utils.can_manage_notes?(enactor),
           siteinfo: siteinfo,
