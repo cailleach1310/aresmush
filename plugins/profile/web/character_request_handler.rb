@@ -79,7 +79,8 @@ module AresMUSH
           last_profile_version: char.last_profile_version ? char.last_profile_version.id : nil,
           show_notes: char == enactor || Utils.can_manage_notes?(enactor),
           siteinfo: siteinfo,
-          custom: show_background ? CustomCharFields.get_fields_for_viewing(char, enactor) : nil,
+          custom: CustomCharFields.get_fields_for_viewing(char, enactor),
+#          custom: show_background ? CustomCharFields.get_fields_for_viewing(char, enactor) : nil,
         }
         
         add_to_profile profile_data, Demographics.build_web_profile_data(char, enactor)
